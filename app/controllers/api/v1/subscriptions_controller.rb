@@ -1,5 +1,9 @@
 class Api::V1::SubscriptionsController < ApplicationController
   def create
-    render json:{status: 'paid'}
+    customer = Stripe::Customer.retrieve({email: params[:email]})
+    customer = Stripe::Customer.create({email: params[:email], source: params[:stripeToken]}) unless customer
+    subscription = Stripe::Subscription.create({customer: customer.id, plan: 'year_subscription'})
+    status = Stripe::Invoice.retrieve(subscription.latest_invoice).paid
+    render json: { status: (status ? 'paid' : 'not paid') }
   end
 end
