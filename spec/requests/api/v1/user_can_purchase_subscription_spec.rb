@@ -18,4 +18,8 @@ RSpec.describe 'POST api/v1/subscriptions', type: :request do
   it 'Subscription for specific user is a specific subscription plan' do
     expect(Stripe::Customer.list(email: 'karlmarx2@mail.com').first.subscriptions.first.plan.id).to eq 'year_subscription'
   end
+
+  # it 'Changes user role to subscriber' do
+  #   expect(current_user.role).to eq 'subscriber'
+  # end
 end
