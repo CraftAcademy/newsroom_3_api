@@ -36,5 +36,8 @@ module Newsroom3Api
       generate.routing_specs false
       generate.controller_specs false
     end
+
+    config.Stripe.publishable_key = Rails.application.credentials.stripe[:publishable_key]
+    config.Stripe.secret_key = Rails.application.credentials.stripe[:secret_key]
   end
 end
