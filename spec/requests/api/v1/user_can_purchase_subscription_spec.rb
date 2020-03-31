@@ -41,7 +41,6 @@ describe 'successfully with valid stripe token' do
   end
 
   it 'responds with a success message' do
-    # binding.pry
     expect(response_json['status']).to eq 'paid'
   end
 
