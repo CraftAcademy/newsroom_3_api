@@ -3,7 +3,7 @@ FactoryBot.define do
     email { "user@mail.com" }
     password { 'password' }
     password_confirmation { 'password' }
-    role { 'registred_user' }
+    role { 'reg_user' }
     factory :subscriber do
       role { 'subscriber' }
     end

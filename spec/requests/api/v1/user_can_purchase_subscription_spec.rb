@@ -69,7 +69,7 @@ end
       end
 
       it 'does not change the users role' do
-        expect(user.role).to eq 'registred_user'
+        expect(user.role).to eq 'reg_user'
       end
     end
 
