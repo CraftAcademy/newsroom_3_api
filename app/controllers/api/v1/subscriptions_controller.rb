@@ -1,6 +1,7 @@
 class Api::V1::SubscriptionsController < ApplicationController
   before_action :authenticate_user!
   def create
+    if params[:stripeToken]
     customer = Stripe::Customer.list(email: params[:email]).data.first
     customer = Stripe::Customer.create({email: params[:email], source: params[:stripeToken]}) unless customer
     subscription = Stripe::Subscription.create({customer: customer.id, plan: 'year_subscription'})
@@ -11,5 +12,6 @@ class Api::V1::SubscriptionsController < ApplicationController
     #     current_user.save!
     #   end
     render json: { status: (status ? 'paid' : 'not paid') }
+    end
   end
 end
