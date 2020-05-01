@@ -1,3 +1,4 @@
+[![Build Status](https://semaphoreci.com/api/v1/emtalen/newsroom_3_api/branches/development/badge.svg)](https://semaphoreci.com/emtalen/newsroom_3_api)
 ### Authors
 [Emma-Maria Thalen](https://github.com/emtalen)  
 [Philip Gaunitz](https://github.com/pgauntiz)  
