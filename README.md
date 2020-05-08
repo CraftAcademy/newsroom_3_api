@@ -32,7 +32,7 @@ The master repository for the visitors interface, mobile app and admin interface
 * Devise_token_auth
 * Stripe-rails
 * Aws-sdk-s3
-* Geocoder'
+* Geocoder
   
 ### Setup   
 We are using encryped credentials for both Sripe and Amazon Web Services. Because of that, you can unfortunately not clone this repo down and run it locally without our masterkey. 
